@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Portfolio {
+  id          String           @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  imageUrl    String // Thumbnail
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  images      PortfolioImage[]
+}
+
+model PortfolioImage {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  url         String
+  portfolioId String    @db.ObjectId
+  portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+}
+
+model Review {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  customerName String
+  company      String?
+  content      String
+  rating       Int      @default(5)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
