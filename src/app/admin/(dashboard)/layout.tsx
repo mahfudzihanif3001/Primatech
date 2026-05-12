@@ -1,5 +1,3 @@
-import { auth } from "@/auth";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 import { LayoutDashboard, LogOut, FileImage, MessageSquareQuote } from "lucide-react";
 import { logout } from "../actions";
@@ -9,8 +7,6 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
-
   // If not authenticated and trying to access anything other than login, redirect
   // (Middleware handles this mostly, but good for double-check)
   

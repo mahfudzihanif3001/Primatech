@@ -58,7 +58,7 @@ export default function Reviews({ reviews }: { reviews: Review[] }) {
               </div>
               
               <p className="text-zinc-300 mb-8 relative z-10 leading-relaxed italic">
-                "{review.content}"
+                &quot;{review.content}&quot;
               </p>
               
               <div className="flex items-center gap-4">
