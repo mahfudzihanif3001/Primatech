@@ -29,9 +29,9 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-gunmetal border border-zinc-800 group-hover:border-amber transition-colors">
-              <Hexagon className="text-cyan absolute" size={24} />
-              <div className="w-2 h-2 bg-amber rounded-full absolute" />
+            <div className="relative flex items-center justify-center w-10 h-10 overflow-hidden rounded-lg bg-gunmetal border border-zinc-800 group-hover:border-amber transition-colors">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Primatech Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <span className="text-heading font-bold text-silver leading-tight tracking-wider text-sm sm:text-base">
