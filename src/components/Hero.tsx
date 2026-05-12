@@ -8,8 +8,18 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Overlay & Noise */}
       <div className="absolute inset-0 z-0 bg-gunmetal">
-        {/* Placeholder for video or HD macro image */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-gunmetal to-gunmetal"></div>
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-gunmetal/80 to-gunmetal/90"></div>
         
         {/* Abstract Glows representing sparks/laser */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber/10 rounded-full blur-[120px] mix-blend-screen" />
