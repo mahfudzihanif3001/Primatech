@@ -15,7 +15,7 @@ export default async function AdminReviews() {
         <div className="lg:col-span-1">
           <div className="glass-dark border border-zinc-800 p-6 rounded-xl">
             <h2 className="text-xl font-bold text-silver mb-4">Tambah Review</h2>
-            <form action={createReview} className="space-y-4">
+            <form action={async (formData) => { "use server"; await createReview(formData); }} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-silver mb-1">Nama Pelanggan</label>
                 <input
@@ -73,7 +73,7 @@ export default async function AdminReviews() {
         <div className="lg:col-span-2">
           <div className="glass-dark border border-zinc-800 p-6 rounded-xl">
             <h2 className="text-xl font-bold text-silver mb-4">Daftar Review ({reviews.length})</h2>
-            
+
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
                 <thead className="bg-zinc-900/50 text-zinc-400">
